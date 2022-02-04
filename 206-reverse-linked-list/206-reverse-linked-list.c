@@ -12,6 +12,7 @@ struct ListNode* reverseList(struct ListNode* head){
     if (head==NULL||head->next==NULL){
         return head;
     }
+    
     struct ListNode* temp=NULL;
     struct ListNode* previous=NULL;
     
