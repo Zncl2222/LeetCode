@@ -8,11 +8,9 @@
 
 struct ListNode* removeElements(struct ListNode* head, int val){
     
-    if (head==NULL){
-        
+    if (head==NULL)
         return head;
-    }
-    
+  
     struct ListNode* r_head=malloc(sizeof(struct ListNode));
     
     r_head->next=head;
