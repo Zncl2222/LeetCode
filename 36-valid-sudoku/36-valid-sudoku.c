@@ -59,16 +59,17 @@ bool isValidSudoku(char** board, int boardSize, int* boardColSize){
                 
                 if (check_mat[index]>1)
                     return false;
-                
             }
-
         }
         
         curr_col+=3;
+        
         if(curr_col>=9){
+            
             curr_col=0;
             curr_row+=3;
         }
+        
         memset(check_mat,0,sizeof(int)*10);
     }
       
