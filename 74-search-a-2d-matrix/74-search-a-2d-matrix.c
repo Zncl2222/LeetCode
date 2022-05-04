@@ -10,10 +10,11 @@ bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target){
         else
             target_row++;
             
-        if (target_row>matrixSize)
-            return false; 
     }
 
+    if (target_row>matrixSize)
+        return false; 
+    
     for(int i=0;i<matCol_size;i++){
 
         if(matrix[target_row][i]==target)
