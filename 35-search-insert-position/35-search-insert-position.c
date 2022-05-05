@@ -2,14 +2,23 @@
 
 int searchInsert(int* nums, int numsSize, int target){
     
-    int index=0;
+    int front=0, end=numsSize-1, mid;
     
-    for (int i=0;i<numsSize;i++){
+    while(front<=end){
         
-        if (nums[i]>=target){
-            return index;  
-        }
-        index++;
+        mid=(front+end)/2;
+        
+        if(nums[mid]==target)
+            return mid;
+            
+        else if(nums[mid]>target)
+            end=mid-1;
+        
+        else if(nums[mid]<target)
+            front=mid+1;
+
     }
-    return numsSize;
+    
+    return front;
+    
 }
