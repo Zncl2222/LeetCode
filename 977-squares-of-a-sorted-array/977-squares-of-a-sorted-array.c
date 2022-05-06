@@ -13,12 +13,6 @@ int* sortedSquares(int* nums, int numsSize, int* returnSize){
         
         res[i]=nums[i]*nums[i];    
     }
-    
-    for(int i=0; i<numsSize; i++){
-        
-        printf("%d ",res[i]);
-        
-    }   
  
     qsort(res,numsSize,sizeof(int),cmp);
     *returnSize=numsSize;
