@@ -40,13 +40,9 @@ bool isValid(char * s){
                     
                     if(stack[--stack_top]!='[')
                         return false;
-                     break;
-                    
-            }
-            
-            
-        }
-        
+                     break;    
+            }       
+        }    
     }
     
     if(stack_top>=1)
