@@ -16,7 +16,6 @@ bool isValid(char * s){
             
             if(stack_top>strlen(s)/2)
                 return false;
-            
         }        
         
         else{
