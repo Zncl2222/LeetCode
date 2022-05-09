@@ -19,14 +19,14 @@ int node_count(struct TreeNode* root){
     return node_count(root->left)+node_count(root->right)+1;   
 }
 
-void preorder(struct TreeNode* root, int* List,int* size){
+void preorder(struct TreeNode* root, int* List,int* root_size){
     
     if(root==NULL)
         return 0;
     
-    List[(*size)++]=root->val;
-    preorder(root->left,List,size);
-    preorder(root->right,List,size);
+    List[(*root_size)++]=root->val;
+    preorder(root->left,List,root_size);
+    preorder(root->right,List,root_size);
        
 }
 
