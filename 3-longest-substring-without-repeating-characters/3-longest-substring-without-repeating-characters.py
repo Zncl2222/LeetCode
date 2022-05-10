@@ -1,18 +1,18 @@
-# define MAX(a,b) (a>b?a:b)
-
-int lengthOfLongestSubstring(char * s){
-
-    int index[256], best=0, pre=-1;
-    
-    memset(index,-1,sizeof(index));
-    
-    for(int i=0; s[i]!='\0'; i++){
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
         
-        pre=MAX(pre,index[s[i]]);
-        best=MAX(best,i-pre);
+        if len(s) == 0:
+            return 0
         
-        index[s[i]]=i;
-    }
-    
-    return best;
-}
+        best=1 
+        boundary=0
+        
+        for i in range(1,len(s)):
+            
+            if s[i] in s[boundary:i]:
+                
+                boundary=s[boundary:i].index(s[i])+boundary+1
+                
+            best=max(best,i-boundary+1)
+            
+        return best
