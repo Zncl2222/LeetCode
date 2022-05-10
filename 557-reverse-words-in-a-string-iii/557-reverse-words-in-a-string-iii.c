@@ -23,8 +23,7 @@ char * reverseWords(char * s){
 
     space_idx[count]=strlen(s);
     
-    
-    int low=0, high, times;
+    int low=0, high;
     
     for(int i=0; i<=count; i++){
         
