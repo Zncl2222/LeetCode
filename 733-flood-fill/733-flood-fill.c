@@ -13,8 +13,8 @@ void fill_traverse(int** image, int row_size, int col_size, int sr, int sc, int 
     image[sr][sc]=newColor;
     
     fill_traverse(image, row_size, col_size, sr+1, sc, origin_color, newColor);
-    fill_traverse(image, row_size, col_size, sr-1, sc, origin_color, newColor);
     fill_traverse(image, row_size, col_size, sr, sc+1, origin_color, newColor);
+    fill_traverse(image, row_size, col_size, sr-1, sc, origin_color, newColor);
     fill_traverse(image, row_size, col_size, sr, sc-1, origin_color, newColor);     
 }
 
