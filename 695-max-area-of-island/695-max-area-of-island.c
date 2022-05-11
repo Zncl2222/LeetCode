@@ -17,8 +17,6 @@ int DFS(int** grid, int row_size, int col_size, int sr, int sc, int** visited){
     return (left+right+up+down+1);
 }
 
-
-
 int maxAreaOfIsland(int** grid, int gridSize, int* gridColSize){
     
     int** visited=(int**)malloc(gridSize*sizeof(int*));
