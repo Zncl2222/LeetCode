@@ -9,7 +9,6 @@
 
 struct TreeNode* mergeTrees(struct TreeNode* root1, struct TreeNode* root2){
     
-    
     struct TreeNode* root_merge=(struct TreeNode*)malloc(sizeof(struct TreeNode));
     
     if (root1==NULL && root2==NULL)
