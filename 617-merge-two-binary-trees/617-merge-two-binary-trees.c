@@ -7,7 +7,6 @@
  * };
  */
 
-
 struct TreeNode* mergeTrees(struct TreeNode* root1, struct TreeNode* root2){
     
     
