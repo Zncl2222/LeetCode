@@ -2,23 +2,25 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         
-        unordered_map<int,int>table;
-        vector<int> result(2);
+        unordered_map<int,int> table;
+        vector<int> res(2);
+        int t, count = 0;
         
-        for(int i=0;i<nums.size();i++){
+        for(auto itr = nums.begin(); itr != nums.end(); itr++){
             
-            if(table.find(target-nums[i])!=table.end()){
-                result[0]=table[target-nums[i]];
-                result[1]=i;
-                return result;
-            }
+            t = target - *itr;
+            
+            if(table.find(*itr) == table.end())
+                table[t] = count;
             else{
-
-                table[nums[i]]=i;
+                res[0] = table[*itr];
+                res[1] = count;
+                return res;
             }
             
+            count++;
         }
         
-        return result;
+        return res;  
     }
 };
