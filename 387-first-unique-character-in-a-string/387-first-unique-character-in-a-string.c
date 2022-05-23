@@ -1,7 +1,7 @@
 
 
 int firstUniqChar(char * s){
-    int temp[26]={0};
+    int temp[256]={0};
     
     for(int i = 0; i < strlen(s); i++){
         
