@@ -12,28 +12,26 @@ class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
         
-        if(head==NULL)
+        if(head == NULL)
             return head;
         
-        struct ListNode* List=(struct ListNode*)malloc(sizeof(struct ListNode));
+        struct ListNode* res = new(struct ListNode);
         
-        List->next=head;
+        res->next = head;
         
-        struct ListNode* res=(struct ListNode*)malloc(sizeof(struct ListNode));
+        struct ListNode* temp = res;
         
-        res=List;
-        
-        while(List->next){
+        while(temp->next != NULL){
             
-            if(List->next->val==val)
-                List->next=List->next->next;
+            if(temp->next->val == val ){
+                
+                temp->next = temp->next->next;
+            }
+            
             else
-                List=List->next;
-            
+                temp = temp->next;
         }
         
         return res->next;
-        
-        
     }
 };
