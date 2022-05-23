@@ -1,22 +1,17 @@
 
 
 int firstUniqChar(char * s){
-    
     int temp[26]={0};
-    int len=strlen(s);
     
-    for(int i=0;i<len;i++){
+    for(int i = 0; i < strlen(s); i++){
         
-        int alphabet=s[i]-'a';
-        temp[alphabet]++;
-
+        temp[s[i]-'a']++;
+        
     }
     
-    for(int i=0;i<len;i++){
-
-        int alphabet=s[i]-'a';
+    for(int i = 0; i < strlen(s); i++){
         
-        if(temp[alphabet]==1)
+        if(temp[s[i]-'a']==1)
             return i;
     }
     
