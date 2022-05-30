@@ -18,30 +18,33 @@ public:
         
         if(root->val == val){
             
-            res = new TreeNode(val);
-            res->left = root->left;
+            res = new(struct TreeNode);
+            res->val = root->val;
             res->right = root->right;
+            res->left = root->left;
+            
             return res;
         }
         
-        if(root->val < val)
+        if(root->val < val){
+            
             res = search(root->right, res, val);
+        }
         else if (root->val > val)
             res = search(root->left, res, val);
         
         return res;
-        
     }
     
     TreeNode* searchBST(TreeNode* root, int val) {
         
         if(root == NULL)
-            return NULL;
+            return root;
         
-        TreeNode* res;
+        struct TreeNode* res;
         
         res = search(root, res, val);
-        
+    
         return res;
     }
 };
