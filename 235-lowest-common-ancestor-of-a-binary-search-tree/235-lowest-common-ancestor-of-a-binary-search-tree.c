@@ -20,7 +20,7 @@ struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p,
     else if (root->val > p->val && root->val > q->val)
         res = lowestCommonAncestor(root->left, p, q);
     else
-        return res = root;
+        res = root;
     
     return res;   
 }
