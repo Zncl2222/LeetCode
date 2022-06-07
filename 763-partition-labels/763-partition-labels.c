@@ -13,14 +13,14 @@ int* partitionLabels(char * s, int* returnSize){
     
     int* res = (int*)malloc(26*sizeof(int));
 
-    for(int i = 0; i<strlen(s); i++){
+    for(int i = 0; s[i] != '\0'; i++){
         
         table[s[i]-'a'] = i;
     }
     
     int end = 0, start = 0;
 
-    for(int i = 0; i< strlen(s); i++){
+    for(int i = 0; s[i] != '\0'; i++){
         
         end = MAX(end, table[s[i]-'a']);
         
