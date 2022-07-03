@@ -6,25 +6,23 @@ int pivotIndex(int* nums, int numsSize){
     int rightsum = 0;
     int pivot = 0;
 
-    for(int j = pivot + 1; j < numsSize; j++){
+    for(int j = 1; j < numsSize; j++){
 
         rightsum += nums[j];
     }
     
-    if(leftsum == rightsum)
-        return pivot;
-    
-    ++pivot;
-
-    for(int i = pivot; i < numsSize; i++){
-
+    for(int i = 1; i < numsSize; i++){
+        
+        ++pivot;
+        if(leftsum == rightsum)
+            return pivot - 1;
         leftsum += nums[pivot - 1];
         rightsum -= nums[pivot];
-
-        if(leftsum == rightsum)
-            return pivot;
-        ++pivot;
+       
     }
+    
+    if(leftsum == rightsum)
+        return numsSize - 1;
     
     return -1;
 }
