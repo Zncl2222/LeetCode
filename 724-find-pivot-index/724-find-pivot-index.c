@@ -6,10 +6,6 @@ int pivotIndex(int* nums, int numsSize){
     int rightsum = 0;
     int pivot = 0;
 
-    for(int j = 0; j < pivot; j++){
-
-        leftsum += nums[j];
-    }
     for(int j = pivot + 1; j < numsSize; j++){
 
         rightsum += nums[j];
