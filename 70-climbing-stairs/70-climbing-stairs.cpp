@@ -11,10 +11,10 @@ public:
             
             total = pre + curr;
             pre = curr;
-            curr = total;     
+            curr = total;
         }
         
         return total;
-        
     }
+
 };
