@@ -14,24 +14,24 @@ public:
                 int index = stk.top().first;
                 int width = i - index;
                 int height = stk.top().second;
-                stk.pop();
                 
-                res = max(res, height * width);
+                res = max(res, width * height);
                 start = index;
+                stk.pop();
             }
             
             stk.push({start, heights[i]});
-            
         }
         
         while(!stk.empty()){
             
             int width = heights.size() - stk.top().first;
             int height = stk.top().second;
-            stk.pop();
             
-            res = max(res, height * width);
+            res = max(res, width * height);
+            stk.pop();
         }
+        
         return res;
     }
 };
