@@ -12,8 +12,10 @@
 class Solution {
 public:
     int goodNodes(TreeNode* root) {
+        
         int res = 0;
         dfs(root, root->val, res);
+        
         return res;
     }
     
