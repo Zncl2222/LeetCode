@@ -1,36 +1,36 @@
 /**
  * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
  */
-class Solution {
-public:
-    int goodNodes(TreeNode* root) {
-        
-        int res = 0;
-        dfs(root, root->val, res);
-        
-        return res;
+func goodNodes(root *TreeNode) int {
+    res := 0
+    dfs(root, &res, root.Val)
+    
+    return res
+}
+
+func MAX(a, b int) int {
+    if a > b {
+        return a
+    } else {
+        return b
+    }
+}
+
+func dfs(root *TreeNode, res *int, curr_max int) {
+    if root == nil {
+        return
     }
     
-    void dfs(TreeNode* root, int curr_max, int& res) {
-        
-        if(root == NULL)
-            return;
-        
-        curr_max = max(curr_max, root->val);
-        
-        if(root->val >= curr_max){
-            res++;
-        }
-        
-        dfs(root->left, curr_max, res);
-        dfs(root->right, curr_max, res);
+    curr_max = MAX(curr_max, root.Val)
+    if root.Val >= curr_max {
+        *res++
     }
-};
+    
+    dfs(root.Left, res, curr_max)
+    dfs(root.Right, res, curr_max)
+}
