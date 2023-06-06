@@ -3,15 +3,14 @@ class Solution:
         if not nums:
             return
         pivot = random.choice(nums)
-        left = [x for x in nums if pivot < x]
+        left = [x for x in nums if pivot > x]
         mid = [x for x in nums if x == pivot]
-        right = [x for x in nums if pivot > x]
+        right = [x for x in nums if pivot < x]
+        right_len = len(right)
+        mid_len = len(mid)
         
-        L = len(left)
-        M = len(mid)
-        
-        if k <= L:
-            return self.findKthLargest(left, k)
-        elif k > L + M:
-            return self.findKthLargest(right, k - L - M)
+        if k <= right_len:
+            return self.findKthLargest(right, k)
+        elif k > right_len + mid_len:
+            return self.findKthLargest(left, k - right_len - mid_len)
         return mid[0]
