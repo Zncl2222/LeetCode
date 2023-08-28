@@ -1,8 +1,6 @@
 class Solution {
 public:
-    
     void DFS(vector<vector<char>>& grid, int i, int j) {
-        
         if (i < 0 || j < 0 || grid.size() <= i || grid[0].size() <= j) {
             return;
         }
@@ -20,7 +18,6 @@ public:
     }
     
     int numIslands(vector<vector<char>>& grid) {
-        
         int island = 0;
         for (int i = 0; i < grid.size(); i++) {
             
