@@ -1,13 +1,6 @@
 class Solution {
 public:
     int arrangeCoins(int n) {
-        int curr_row_num = 1;
-        int accumulate_coin = 0;
-        while (n - curr_row_num >= 0) {
-            n -= curr_row_num;
-            curr_row_num += 1;
-            accumulate_coin += 1;
-        }
-        return accumulate_coin;
+        return -1 / 2.0 + sqrt(2 * (long long)n + 1 / 4.0);
     }
 };
